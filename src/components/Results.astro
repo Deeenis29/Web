@@ -1,0 +1,47 @@
+---
+import ResultCard from './ResultCard.astro';
+
+const cards = [
+  {
+    image: '/card1.png',
+    alt: 'Familias acompañadas',
+    title: '+1 000 Familias<br>acompañadas',
+    description: 'En el desarrollo integral de sus hijos, logrando resultados visibles y duraderos desde el primer mes de tratamiento.'
+  },
+  {
+    image: '/card1.png',
+    alt: 'Equipo multidisciplinario',
+    title: 'Equipo<br>multidisciplinario',
+    description: 'Expertas en neurodesarrollo, psicología, lenguaje, psicomotricidad, rehabilitación física y terapia sistémica familiar'
+  },
+  {
+    image: '/card1.png',
+    alt: 'Formación a familias',
+    title: 'Formación a<br>familias',
+    description: 'Empoderamos con herramientas y estrategias para apoyar el desarrollo de sus hijos en el hogar.'
+  }
+];
+---
+
+<section class="relative w-full min-h-screen ">
+  <!-- Fondo de nubes -->
+  <img 
+    src="/fondo-nubes.png"
+    alt=""
+    class="absolute w-full z-[1]" 
+    aria-hidden="true"
+  >
+
+  <div class="relative z-[2]">
+    <h2 class="text-4xl font-bold text-white text-center pt-24 max-w-3xl mx-auto">
+      Resultados que reflejan nuestra<br>
+      dedicación y experiencia
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-xl mx-auto px-4">
+      {cards.map(card => (
+        <ResultCard {...card} />
+      ))}
+    </div>
+  </div>
+</section>
