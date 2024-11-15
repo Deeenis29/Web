@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";	
+---
+
+<Layout title="Ubicación">
+	<Header/>
+	<main class="container mx-auto px-4 py-8">
+	  <div class="max-w-6xl mx-auto">
+		<div class="flex flex-col md:flex-row gap-10 items-center">
+		  <!-- Left side content -->
+		  <div class="w-full md:w-1/2">
+			<h1 class="text-5xl font-bold font-nunito text-[#3688D8] mb-8">Talleres y capacitaciones</h1>
+  
+			<div class="space-y-4">
+			  <!-- Estimulación temprana -->
+				<button class="collapsible-btn w-full flex items-center text-left font-semibold text-xl gap-2 text-[#444444]" data-target="estimulacion">
+					<img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/button.png?t=2024-11-15T01%3A16%3A30.864Z" alt="boton" class="w-8 h-8">
+				  Estimulación temprana
+				</button>
+				<ul class="collapsible-content hidden mt-4 ml-8 space-y-2 text-xl gap-2 font-semibold">
+				  <li class="flex items-center">
+					<span class="w-3 h-3 bg-[#FFAF16] rounded-full mr-2"></span>
+					Bebé
+				  </li>
+				  <li class="flex items-center">
+					<span class="w-3 h-3 bg-[#FFAF16] rounded-full mr-2"></span>
+					Cognitivo motor (gateadores)
+				  </li>
+				  <li class="flex items-center">
+					<span class="w-3 h-3 bg-[#FFAF16] rounded-full mr-2"></span>
+					Habilidades cognitivas (caminantes)
+				  </li>
+				  <li class="flex items-center">
+					<span class="w-3 h-3 bg-[#FFAF16] rounded-full mr-2"></span>
+					Pensamiento lógico motor (exploradores)
+				  </li>
+				</ul>
+  
+			  <!-- Habilidades sociales -->
+				<button class=" w-full flex items-center text-left font-semibold text-xl gap-2 text-[#444444]" data-target="habilidades">
+					<img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/button.png?t=2024-11-15T01%3A16%3A30.864Z" alt="boton" class="w-8 h-8">
+				  Habilidades sociales
+				</button>
+
+  
+			  <!-- Musicoterapia -->
+				<button class=" w-full flex items-center text-left font-semibold text-xl gap-2" data-target="musicoterapia">
+				  	<img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/button.png?t=2024-11-15T01%3A16%3A30.864Z" alt="boton" class="w-8 h-8">
+				  Musicoterapia
+				</button>
+			  </div>
+
+  
+			<button class="mt-8 bg-[#FDB813] text-white px-8 py-3 rounded-full transition-colors">
+			  ¡Escríbenos!
+			</button>
+		  </div>
+  
+		  <!-- Right side image -->
+		  <div class="w-full md:w-1/2">
+			<img 
+			  src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Services/workshops/banner.jpg"
+			  alt="Banner"
+			  class="w-full h-auto rounded-lg shadow-lg"
+			/>
+		  </div>
+		</div>
+	  </div>
+	</main>
+  </Layout>
+  
+  <script>
+	document.addEventListener('DOMContentLoaded', () => {
+	  const buttons = document.querySelectorAll('.collapsible-btn');
+	  
+	  buttons.forEach(button => {
+		button.addEventListener('click', () => {
+		  const content = button.nextElementSibling as HTMLElement;
+		  const plusSign = button.querySelector('span') as HTMLElement;
+		  
+		  // Toggle content visibility
+		  content.classList.toggle('hidden');
+		  
+		  // Toggle plus/minus sign
+		  plusSign.textContent = content.classList.contains('hidden') ? '+' : '-';
+		});
+	  });
+	});
+  </script>
+  
+  <style>
+	.collapsible-content {
+	  transition: all 0.3s ease-in-out;
+	}
+  </style>

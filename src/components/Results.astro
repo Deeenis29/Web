@@ -1,47 +1,41 @@
----
-import ResultCard from './ResultCard.astro';
-
-const cards = [
-  {
-    image: '/card1.png',
-    alt: 'Familias acompañadas',
-    title: '+1 000 Familias<br>acompañadas',
-    description: 'En el desarrollo integral de sus hijos, logrando resultados visibles y duraderos desde el primer mes de tratamiento.'
-  },
-  {
-    image: '/card1.png',
-    alt: 'Equipo multidisciplinario',
-    title: 'Equipo<br>multidisciplinario',
-    description: 'Expertas en neurodesarrollo, psicología, lenguaje, psicomotricidad, rehabilitación física y terapia sistémica familiar'
-  },
-  {
-    image: '/card1.png',
-    alt: 'Formación a familias',
-    title: 'Formación a<br>familias',
-    description: 'Empoderamos con herramientas y estrategias para apoyar el desarrollo de sus hijos en el hogar.'
-  }
-];
----
-
-<section class="relative w-full min-h-screen ">
+<section class="relative z-0">
   <!-- Fondo de nubes -->
-  <img 
-    src="/fondo-nubes.png"
-    alt=""
-    class="absolute w-full z-[1]" 
-    aria-hidden="true"
-  >
+  <img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/bg-clouds.png?t=2024-11-14T18%3A51%3A58.194Z" alt="fondo-nubes" class="w-full h-auto object-cover">
+  
+  <!-- Contenido sobre el fondo -->
+  <div class="absolute inset-0 flex flex-col z-[1] text-center">
+    <h1 class="text-white text-[40px] mt-20 font-bold font-nunito leading-[1.2]">Resultados que reflejan nuestra <br> dedicación y experiencia</h1>
+    
+    <!-- Contenedor de las tres imágenes con el texto superpuesto -->
+    <div class="flex space-x-5 justify-evenly mt-10">
+      
+      <!-- Primer cuadro con imagen y texto -->
+      <div class="relative w-96 h-auto text-center">
+        <img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/card1.png?t=2024-11-14T18%3A59%3A09.284Z" alt="Card 1" class="w-full h-auto">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white mt-40 leading-tight">
+          <h1 class="text-[28px] leading-[1] font-extrabold font-nunito mb-4">+1 000 Familias acompañadas</h1>
+          <p class="text-[15px] font-[600] text-center max-w-60">En el desarrollo integral de sus hijos, logrando resultados visibles y duraderos desde el primer mes de tratamiento.</p>
+        </div>
+      </div>
+      
+      <!-- Segundo cuadro con imagen y texto -->
+      <div class="relative w-96 h-auto">
+        <img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/card2.png?t=2024-11-14T18%3A59%3A13.821Z" alt="Card 2" class="w-full h-auto">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white mt-40 leading-tight">
+          <h1 class="text-[28px] leading-[1] font-extrabold font-nunito mb-4">Equipo <br> multidisciplinario</h1>
+          <p class="text-[15px] font-[600] text-center max-w-64">Expertas en neurodesarrollo, psicología, lenguaje, psicomotricidad, rehabilitación física y terapia sistémica familiar.</p>
+        </div>
+      </div>
+      
+      <!-- Tercer cuadro con imagen y texto -->
+      <div class="relative w-96 h-auto">
+        <img src="https://stdscmwxpsffrpucmitu.supabase.co/storage/v1/object/public/Assets/Home/card3.png?t=2024-11-14T18%3A59%3A17.354Z" alt="Card 3" class="w-full h-auto">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white mt-40 leading-tight">
+          <h1 class="text-[28px] leading-[1] font-extrabold font-nunito mb-4">Formación a <br> familias</h1>
+          <p class="text-[15px] font-[600] text-center max-w-60">Empoderamos con herramientas y estrategias para apoyar el desarrollo de sus hijos en el hogar.</p>
+        </div>
+      </div>
 
-  <div class="relative z-[2]">
-    <h2 class="text-4xl font-bold text-white text-center pt-24 max-w-3xl mx-auto">
-      Resultados que reflejan nuestra<br>
-      dedicación y experiencia
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-xl mx-auto px-4">
-      {cards.map(card => (
-        <ResultCard {...card} />
-      ))}
     </div>
   </div>
 </section>
